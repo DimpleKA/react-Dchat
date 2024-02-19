@@ -1,12 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const handleCloseOffcanvas = () => {
+    const offcanvas = document.getElementById('offcanvasRight');
+    const offcanvasInstance = new window.bootstrap.Offcanvas(offcanvas); // Ensure 'bootstrap' object is defined
+    offcanvasInstance.hide(); // Close the offcanvas
+  };
+
   return (
     <div>
-      {/* Navbar */}
       <nav className="navbar navbar-dark bg-dark">
         <div className="container-fluid">
-          {/* Navbar Toggler Button */}
           <button
             className="navbar-toggler"
             type="button"
@@ -17,21 +22,19 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* Messages and Guardians */}
           <div className="d-flex align-items-center">
             <div className="me-3">
-              <span className="text-white me-1">Messages</span>
+              <Link to="/messages" className="text-white me-1 text-decoration-none">Messages</Link>
               <span className="badge bg-primary">4</span>
             </div>
             <div>
-              <span className="text-white me-1">Gardenians</span>
+              <Link to="/gardenians" className="text-white me-1 text-decoration-none">Gardenians</Link>
               <span className="badge bg-success">2</span>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Offcanvas */}
       <div
         className="offcanvas offcanvas-end"
         tabIndex="-1"
@@ -39,7 +42,7 @@ const Navbar = () => {
         aria-labelledby="offcanvasRightLabel"
       >
         <div className="offcanvas-header bg-dark text-white">
-          <h5 className="fw-bold mb-0">Dchat</h5> {/* Added fw-bold for bold text */}
+          <h5 className="fw-bold mb-0">Dchat</h5>
           <button
             type="button"
             className="btn-close text-reset"
@@ -49,10 +52,10 @@ const Navbar = () => {
         </div>
         <div className="offcanvas-body text-center">
           <ul className="list-group list-group-flush d-inline-block">
-            <li className="list-group-item h4 py-3">Profile</li>
-            <li className="list-group-item h4 py-3">Events</li>
-            <li className="list-group-item h4 py-3">SwipeNmatch</li>
-            <li className="list-group-item h4 py-3">Logout</li>
+            <li className="list-group-item h4 py-3"><Link to="/profile" className="text-dark text-decoration-none" onClick={handleCloseOffcanvas}>Profile</Link></li>
+            <li className="list-group-item h4 py-3"><Link to="/events" className="text-dark text-decoration-none" onClick={handleCloseOffcanvas}>Events</Link></li>
+            <li className="list-group-item h4 py-3"><Link to="/swipenmatch" className="text-dark text-decoration-none" onClick={handleCloseOffcanvas}>SwipeNmatch</Link></li>
+            <li className="list-group-item h4 py-3"><Link to="/logout" className="text-dark text-decoration-none" onClick={handleCloseOffcanvas}>Logout</Link></li>
           </ul>
         </div>
       </div>

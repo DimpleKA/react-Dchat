@@ -1,11 +1,16 @@
 // Messages.js
 import React from 'react';
+import Sendarea from './Sendarea';
+import Dp from './Dp';
+import Chats from './Chats';
+import '../Styles/Messages.css'
 
 const Messages = () => {
   return (
     <div>
-      <h2>Messages Component</h2>
-      {/* Your Messages component content */}
+       <Dp/>
+       <Chats/>
+      <Sendarea/>
     </div>
   );
 };

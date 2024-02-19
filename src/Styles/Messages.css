@@ -1,0 +1,16 @@
+/* Add this to your existing CSS file or create a new one */
+
+.dp {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff; /* Example background color */
+    padding: 10px;
+  }
+  
+  .send-area {
+    position: sticky;
+    bottom: 0;
+    background-color: #ffffff; /* Example background color */
+    padding: 10px;
+  }
+  
