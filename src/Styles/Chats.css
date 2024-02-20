@@ -1,9 +1,13 @@
 /* chat-container styles */
 .chat-container {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Add vertical scrollbar */
+  max-height: 510px; /* Set maximum height */
+}
+
+/* Add any other styles you need for your messages */
+
   
   /* message-container styles */
   .message-container {
